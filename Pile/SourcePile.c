@@ -28,9 +28,9 @@ TP *Empiler(TP *Pile,int elem)
 	{
 	 nouv=(TP*)malloc(sizeof(TP));
 	 nouv->Donnee=elem;
+	 nouv->TailleActuelle=Pile->TailleActuelle+1;
 	 nouv->Suivant=Pile;
 	 Pile=nouv;
-	 Pile->TailleActuelle++;
 	}
 	return Pile;
 }
@@ -41,9 +41,9 @@ TP *Depiler(TP *Pile,int *DonneeDepilee)
 		printf("\nRien à depiler, la pile est vide.");
 	else
 	{
+		*DonneeDepilee=Pile->Donnee;
 		ptr=Pile;
 		Pile=Pile->Suivant;
-		Pile->TailleActuelle--;
 		free(ptr);
 	}
 	return Pile;
