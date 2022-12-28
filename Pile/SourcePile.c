@@ -27,13 +27,14 @@ TP *Empiler(TP *Pile,int elem)
 	else
 	{
 	 nouv=(TP*)malloc(sizeof(TP));
+	 nouv->Donnee=elem;
 	 nouv->Suivant=Pile;
 	 Pile=nouv;
 	 Pile->TailleActuelle++;
 	}
 	return Pile;
 }
-TP *Depiler(TP *Pile,int DonneeDepilee)
+TP *Depiler(TP *Pile,int *DonneeDepilee)
 {
 	TP *ptr;
 	if(EstPileVide(Pile))
@@ -51,8 +52,9 @@ int SommetPile(TP *Pile)
 {
 	int som;
 	if(EstPileVide(Pile))
-		printf("\nLA PILE EST VIDE.");        else
-		som=Pile->Donnee;
+		printf("\nLA PILE EST VIDE.");        else{
+	som=Pile->Donnee;
+	}
 	return som;
 }
 void AffichagePile(TP *Pile)
@@ -77,7 +79,7 @@ TP *NettoyerPile(TP *Pile)
 	else
 	{
 		Pile=Depiler(Pile,&var);
-		Pile=Nettoyer(Pile);
+		Pile=NettoyerPile(Pile);
 	}
 	return Pile;
 }
