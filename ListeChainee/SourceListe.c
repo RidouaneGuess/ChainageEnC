@@ -1,4 +1,6 @@
 #include<stdio.h>
+#include<stdlib.h>
+#include "BiblioListe.h"
 TypeCellule *ListeVide()
 {
 	TypeCellule *L;
@@ -32,4 +34,21 @@ TypeCellule *InsererTete(TypeCellule *AncienneListe,TypeDonnee Donnee)
 	nouv->Suivant=AncienneListe;
 	return nouv;
 }
+TypeCellule *SaisieListeEnvers()
+{
+	TypeCellule *Liste=ListeVide();
+	TypeDonnee elem;
+	char rep;
+	printf("\nVous ne voulez pas, une liste tout simplement n'est ce pas?");
+	scanf("%s",&rep);
+		while(rep=='o')
+		{
+			elem=SaisieDonnee();
+			Liste=InsererTete(Liste,elem);
+			printf("\n%f A ETE INSERER EN TETE DE LISTE.\nVOUS VOULEZ CONTINUER A INSERER?",elem);
+			scanf("%s",&rep);
+		}
+	return Liste;
+}
+
 
