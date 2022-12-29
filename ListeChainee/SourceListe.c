@@ -50,5 +50,35 @@ TypeCellule *SaisieListeEnvers()
 		}
 	return Liste;
 }
+TypeCellule *InsererQueue(TypeCellule *AncienneListe,TypeDonnee Donnee)
+{
+	TypeCellule *nouv,*ptr;
+	nouv=(TypeCellule*)malloc(sizeof(TypeCellule));
+	nouv->Donnee=Donnee;
+	nouv->Suivant=NULL;
+	if(EstListeVide(AncienneListe))
+		AncienneListe=nouv;
+	else{
+	for(ptr=AncienneListe;ptr->Suivant!=NULL;ptr=ptr->Suivant){}
+	ptr->Suivant=nouv;
+	}
+	return AncienneListe;
+}
 
 
+TypeCellule *SaisieListeEndroit()                  {                                                TypeCellule *Liste=ListeVide();                TypeDonnee elem;                                  char rep;                         printf("\nVous ne voulez pas, une liste tout simplement n'est ce pas?");
+	scanf("%s",&rep);                                         while(rep=='o')                                   {                                                   elem=SaisieDonnee();                         Liste=InsererQueue(Liste,elem);                                                  printf("\n%f A ETE INSERER EN TETE DE LISTE.\nVOUS VOULEZ CONTINUER A INSERER?",elem);
+	scanf("%s",&rep);
+}                                       
+return Liste;                             
+}
+void AfficherListe(TypeCellule *Liste)
+{
+	TypeCellule *ptr=Liste;
+	printf("\nLa Liste est:\n");
+	while(ptr!=NULL)
+	{
+		printf("\t%f",ptr->Donnee);
+		ptr=ptr->Suivant;
+	}
+}
