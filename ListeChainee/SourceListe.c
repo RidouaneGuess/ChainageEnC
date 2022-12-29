@@ -82,3 +82,15 @@ void AfficherListe(TypeCellule *Liste)
 		ptr=ptr->Suivant;
 	}
 }
+TypeCellule *SupprimerTete(TypeCellule *AncienneListe)
+{
+	TypeCellule *ptr;
+	if(EstListeVide(AncienneListe))
+		printf("\nLa Liste est vide.");
+	else{
+		ptr=AncienneListe;
+		AncienneListe=AncienneListe->Suivant;
+		free(ptr);
+	}
+	return AncienneListe;
+}
