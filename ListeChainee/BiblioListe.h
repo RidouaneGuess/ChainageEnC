@@ -22,4 +22,5 @@ TypeCellule *SupprimerQueue(TypeCellule *AncienneListe);
 TypeCellule *SupprimerPosition(TypeCellule *AncienneListe,int Position);
 TypeCellule *SupprimerApresDonnee(TypeCellule *AncienneListe,TypeDonnee Donnee);
 TypeCellule *SupprimerAvantDonnee(TypeCellule *AncienneListe,TypeDonnee Donnee);
+void Liberation(TypeCellule **pl);
 

@@ -94,3 +94,14 @@ TypeCellule *SupprimerTete(TypeCellule *AncienneListe)
 	}
 	return AncienneListe;
 }
+void Liberation(TypeCellule **lp)//pour avoir l'adresse de la tete
+{
+ TypeCellule *ptr;
+ while(*lp!=NULL)
+ {
+	 ptr=*pl;
+	 *pl=(*pl)->Suivant;
+	 free(ptr);
+ }
+ *pl=NULL;
+}
