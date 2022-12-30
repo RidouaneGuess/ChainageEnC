@@ -94,10 +94,10 @@ TypeCellule *SupprimerTete(TypeCellule *AncienneListe)
 	}
 	return AncienneListe;
 }
-void Liberation(TypeCellule **lp)//pour avoir l'adresse de la tete
+void Liberation(TypeCellule **pl)//pour avoir l'adresse de la tete
 {
  TypeCellule *ptr;
- while(*lp!=NULL)
+ while(*pl!=NULL)
  {
 	 ptr=*pl;
 	 *pl=(*pl)->Suivant;
@@ -105,3 +105,9 @@ void Liberation(TypeCellule **lp)//pour avoir l'adresse de la tete
  }
  *pl=NULL;
 }
+TypeCellule *InsererPosition(TypeCellule *AncienneListe,int Position,TypeDonnee Donnee)
+{
+	TypeCellule *nouv;
+	nouv=
+	if(EstListeVide(AncienneListe))
+		

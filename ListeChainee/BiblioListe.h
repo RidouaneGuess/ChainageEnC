@@ -14,7 +14,7 @@ TypeCellule *SaisieListeEnvers();
 TypeCellule *InsererQueue(TypeCellule *AncienneListe,TypeDonnee Donnee);
 TypeCellule *SaisieListeEndroit();
 void AfficherListe(TypeCellule *Liste);
-TypeCellule *InsererPosition(TypeCellule *AncienneListe,int Position);
+TypeCellule *InsererPosition(TypeCellule *AncienneListe,int Position,TypeDonnee Donnee);
 TypeCellule *InsererAvantDonnee(TypeCellule *AncienneListe,TypeDonnee Donnee);
 TypeCellule *InsererApresDonnee(TypeCellule *AncienneListe,TypeDonnee Donnee);
 TypeCellule *SupprimerTete(TypeCellule *AncienneListe);

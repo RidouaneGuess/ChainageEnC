@@ -12,5 +12,6 @@ int main()
 	AfficherListe(L1);
 	Liberation(&L);
 	Liberation(&L1);
+	AfficherListe(L);
 	return 0;
 }
